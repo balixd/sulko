@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 100VH;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #046DB9;
+        }
+        .ablak{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            height: 450px;
+            width: 350px;
+            background-color: #FEFFFF;
+            border-radius: 5px;
+            box-shadow: 0px 0px 4px black;
+        }
+
+
+        h3{
+            margin: 0;
+            
+        }
+        .header{
+            background-color: rgb(2, 75, 148);
+            color: white;
+            width: 100%;
+            text-align: center;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            border: 1px solid rgb(2, 75, 148) ;
+        }
+        .eredmeny{
+            margin-top: 40px;
+            margin-bottom: 80px;
+            box-shadow: 0px 0px 30px rgb(151, 207, 253) ;
+        }
+
+        .eredmeny p {
+            text-align: center;
+        }
+        .eredmeny p:nth-child(1){
+            margin-top: 0px;
+        }
+        .eredmeny p:nth-child(2){
+            margin-bottom: 0px;
+        }
+
+        .mezo{
+            width: 180px;
+        }
+
+        .mezo:focus{
+            border: none;
+            outline: none;
+        }
+        .bevitelimezo{
+            margin-bottom: 50px;
+            display: flex;
+            align-items: center;
+        }
+        .felirat{
+            margin-left: 10px;
+        }
+
+        button{
+            background-color: #3F51B5;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 196px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="ablak">
+        <div class="header">
+            <h3>BMI kalkulátor</h3>
+        </div>
+        <div class="body">
+            <div class="eredmeny">
+                <p id="index">20.0</p>
+                <p id="szovegeseredmeny">Normál testsúly</p>
+            </div>
+            <div class="bevitelimezo">
+                <input id="testsuly" type="range"  class="mezo" min="20" max="200" value="20"> 
+                <p><span id="sulyertek"></span></p>
+                <span class="felirat">kg</span>
+             
+            </div>
+            <div class="bevitelimezo">
+                <input id="magassag" type="range"  class="mezo" min="50" max="200" value="50" >
+                <p><span id="magassagertek"></span></p>
+                                <span class="felirat">cm</span>
+             
+            </div>    
+    
+            <button onclick="szamol()">Számol</button>
+        </div>
+    </div>
+    <script>
+        let slider= document.getElementById("testsuly");
+        let output= document.getElementById("sulyertek");
+        slider.oninput=function(){
+            output.innerHTML=this.value;
+        }
+        
+        let slider2= document.getElementById("magassag");
+        let output2= document.getElementById("magassagertek");
+        slider2.oninput=function(){
+            output2.innerHTML=this.value;
+        }
+        
+    
+
+        function szamol(){
+            let testsuly = document.querySelector("#testsuly").value;
+            let magassagcm = document.querySelector("#magassag").value;
+            let magassagmeterben = magassagcm/100
+            let bmi = testsuly / (magassagmeterben*magassagmeterben);
+            let eredmeny = Math.round(bmi*10)/10
+            let eredmenykijelzo = document.querySelector("#index");
+            let szovegeseredmenykijelzo = document.querySelector("#szovegeseredmeny");
+            eredmenykijelzo.innerHTML = eredmeny;
+
+            if(eredmeny < 18.5){
+                eredmenykijelzo.style.color = "#94B5D7";
+                szovegeseredmenykijelzo.innerHTML = "Sovány";
+            }
+            else if( eredmeny < 24.9){
+                eredmenykijelzo.style.color = "#8FC39F";
+                szovegeseredmenykijelzo.innerHTML = "Normal";
+            }
+            else if( eredmeny < 29.9){
+                eredmenykijelzo.style.color = "#FCD547";
+                szovegeseredmenykijelzo.innerHTML = "Enyhén kövér";
+            }
+            else if( eredmeny < 34.9){
+                eredmenykijelzo.style.color = "#E5985D";
+                szovegeseredmenykijelzo.innerHTML = "Kövér";
+            }
+            else{
+                eredmenykijelzo.style.color = "#D55C5A";
+                szovegeseredmenykijelzo.innerHTML = "nagyon kövér";
+            }
+
+
+
+        }
+    </script>
+</body>
+</html>
