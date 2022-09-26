@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+body{
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: purple;
+}
+.ablak{
+    border: 2px solid black;
+}
+.p{
+}
+</style>
+<body>
+    <div class="ablak">
+        <div class="fejléc"><h1>A négyzet oldala</h1></div>
+        <div class="body">
+            <div class="bekertszam">
+            <input type="text" value="" id="bekertszam" name="a">
+                
+        </div>
+        <div class="gomb">
+           <button onclick="szamol()">Számol</button>
+        </div>
+        <div class="eredmeny">
+            <p id="eredmeny1">Területe</p>
+            
+        </div>
+        <div class="eredmeny">
+            <p id="eredmeny2">Kerülete</p>
+           
+        </div>
+        </div>
+    </div>
+</body>
+    <script>
+        function szamol(){
+            let a = (+document.getElementById("bekertszam").value)
+            console.log(a,typeof(a))
+
+            let Terulet = a * a;
+            let Kerulet = 4*a;
+            document.getElementById("eredmeny1").innerHTML="Területe:"+Terulet;
+            document.getElementById("eredmeny2").innerHTML="Kerülete:"+Kerulet;
+        }
+    </script>
+    
+
+</html>
