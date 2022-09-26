@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téglalap</title>
+</head>
+<style>
+    body{
+        height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: purple;
+    }
+    .ablak{
+    border: 2px solid black;
+}
+</style>
+<body>
+    <div class="ablak"><h1>Téglalap</h1></div>
+    <div class="bekertszam">
+        <input type="text" value="" id="bekertszam">
+    </div>
+    <div class="gomb">
+        <button onclick="szamol()">Számol</button>
+     </div>
+    <div class="bekertszam">
+        <p id="Terulet">Terület</p>
+    </div>
+
+    <div class="bekertszam">
+        <p id="Kerulet">Kerület</p>
+    </div>
+</body>
+<script>
+function szamol(){
+    var a,b,Terulet,Kerulet;
+    var a parseInt(document.getElementById("bekertszam").value);
+    var b parseInt(document.getElementById("bekertszam").value);
+
+    Terulet= a*b
+    Kerulet = a+b*2
+}
+
+</script>
+</html>
