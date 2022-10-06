@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+  <title>Bolygók</title>
+  <style>
+    img{
+      width: 200px;
+      height: 200px;
+      
+      }
+   body{
+    background-color: grey;
+   }
+    
+    .asd{ 
+     text-align: center;
+    }
+    hr{
+      background-color: white;
+      width: 85%;
+    }
+    .row{
+      border: white solid 1px;
+    }
+    h3{
+      color: white;
+    }
+    h1{
+      color: white;
+    }
+  </style>
+</head>
+<body>
+ <h1 class="asd">A Naprendszer bolygói</h1>
+  <div class="container">
+    
+    <div class="row asd">
+    
+
+      <div class="col-3">
+        <img  src="merkur.jpg" class="keret">
+        <hr>
+        <h3>Merkúr</h3> 
+      </div>
+
+      <div class="col-3">
+        <img src="venusz.jpg" class="keret">
+        <hr>
+        <h3>Vénusz</h3>
+      </div>
+
+      <div class="col-3">
+        <img  src="fold.jpg" class="keret">
+        <hr>
+        <h3>Föld</h3>
+      </div>
+
+      <div class="col-3">
+        <img  src="mars.jpg"  class="keret">
+        <hr>
+        <h3>Mars</h3>
+     </div>
+</div>
+      <div class="row asd">
+      <div class="col-3">
+        <img src="jupiter.jpg" class="keret">
+        <hr>
+        <h3>Jupiter</h3>
+      </div>
+
+      <div class="col-3">
+  
+        <img   src="saturn.jpg" class="keret">
+        <hr>
+        <h3>Szaturnusz</h3>
+        
+      </div>
+
+      <div class="col-3">
+  
+        <img src="uranus.jpg" class="keret">
+        <hr>
+        <h3>Uránusz</h3>
+        
+      </div>
+
+      <div class="col-3">
+        
+        <img src="neptun.jpg" class="keret">
+        <hr>
+        <h3>Neptunusz</h3>
+      
+      </div>
+      </div>
+      </div>
+  </div>
+
+<script>
+  const bolygok=[
+    {   id:1,
+        name:'Merkúr',
+        img:'merkur.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010301Merkur/merkur.html' },
+    {   id:2,
+        name:'Vénusz',
+        img:'venusz.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010302Venusz/venusz.html' },
+    {   id:3,
+        name:'Föld',
+        img:'fold.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/01030301Fold/fold.html' },
+    {   id:4,
+        name:'Mars',
+        img:'mars.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010304Mars/Mars.html' },
+    {   id:5,
+        name:'Jupiter',
+        img:'jupiter.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010305Jupiter/Jupiter.html' },
+    {   id:6,
+        name:'Szaturnusz',
+        img:'saturn.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010306Szaturnusz/Szaturnusz.html' },
+    {   id:7,
+        name:'Uránusz',
+        img:'uranus.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010308Neptunusz/Neptunusz.html' },
+    {   id:8,
+        name:'Neptunusz',
+        img:'neptun.jpg',
+        descr:'http://astro.u-szeged.hu/oktatas/csillagaszat/6_Naprendszer/010308Neptunusz/Neptunusz.html' },
+]
+</script>
+
+
+</body>
+
+</html>
