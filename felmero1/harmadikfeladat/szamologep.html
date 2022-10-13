@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          body{
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+    
+        }
+        .container{
+            border: 2px solid blue;
+            padding: 2px;
+
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            color: white;
+            background-color: blue;
+            align-items: center;
+            border-radius: 4px;
+        }
+        .gombok{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            justify-content: space-around;
+        }
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p style="font-size:24px; font-weight: bold; text-align: center;">Egyszerű számológép</p>
+        <div class="elso"><input style="width: 390px;;" type="number" placeholder="Add meg az egyik számot" id="szam1"></div>
+        <div class="masodik"><input style="width: 390px;" type="number" placeholder="Add meg a másik számot" id="szam2"></div>
+        <input style="width: 390px;"type="number" id="eredmeny">
+
+        <div class="gombok">
+            <button style="padding: 5px; " onclick="osszead()">+</button>
+            <button style="padding: 5px; " onclick="kivon()">-</button>
+            <button style="padding: 5px; " onclick="osztas()">/</button>
+            <button style="padding: 5px; "onclick="szorzas()">*</button>
+        </div>
+    </div>
+
+</body>
+<script>
+    function osszead(){
+        let szam1= Number(document.querySelector("#szam1").value)
+        let szam2 = Number(document.querySelector("#szam2").value);
+            document.querySelector("#eredmeny").value= szam1 + szam2;
+    }
+
+    function kivon(){
+        let szam1= Number(document.querySelector("#szam1").value)
+        let szam2 = Number(document.querySelector("#szam2").value);
+            document.querySelector("#eredmeny").value= szam1 - szam2;
+    }
+    function osztas(){
+        let szam1= Number(document.querySelector("#szam1").value)
+        let szam2 = Number(document.querySelector("#szam2").value);
+            document.querySelector("#eredmeny").value= szam1 / szam2;
+    }
+    function szorzas(){
+        let szam1= Number(document.querySelector("#szam1").value)
+        let szam2 = Number(document.querySelector("#szam2").value);
+            document.querySelector("#eredmeny").value= szam1 * szam2;
+    }
+</script>
+</html>

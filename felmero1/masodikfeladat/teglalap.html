@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+
+        <div class="body">
+            <div class="fejléc"><h1>Kérek 2 számot </h1></div>
+            <div class="bekertszam">
+            <input type="text" value="" id="bekertszam" name="a">
+    
+        </div>
+        <div class="bekertszam2">
+            <input type="text" value="" id="bekertszam2" name="b">
+        </div>
+        <div class="gomb">
+           <button onclick="szamol()">Számol</button>
+        </div>
+        <div class="eredmeny">
+            <p id="eredmeny1">Területe</p>
+            
+        </div>
+        <div class="eredmeny">
+            <p id="eredmeny2">Kerülete</p>
+           
+        </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function szamol(){
+            let a = (+document.getElementById("bekertszam").value)
+            console.log(a,typeof(a))
+
+            let b = (+document.getElementById("bekertszam2").value)
+            console.log(b,typeof(b))
+
+            let Terulet = a * b;
+            let Kerulet = a+b+a+b;
+            document.getElementById("eredmeny1").innerHTML="Területe:"+Terulet;
+            document.getElementById("eredmeny2").innerHTML="Kerülete:"+Kerulet;
+        }
+</script>
+</html>

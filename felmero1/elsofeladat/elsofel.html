@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1feladat</title>
+</head>
+<body>
+    <div><img src="fold.jpg" id="fold" alt="föld" title="föld"></div>
+    <div class="gomb">
+        <button onclick="Valt()">Kép váltása</button>
+    </div>
+    
+</body>
+<script>
+ function Valt(){
+   /* document.getElementById('fold').src = "mars.jpg"
+ }*/
+
+
+ let image = document.getElementById('fold');
+        if (image.src.match("mars")) {
+            image.src = "fold.jpg";
+        }   
+        else {
+            image.src = "mars.jpg";
+            }
+ }
+</script>
+</html>
