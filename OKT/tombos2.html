@@ -10,16 +10,16 @@
 <body>
     <div class="container">
         <div class="row justify-content-center border h-100">
-        <input type="button" value="Számozatlan Lista" onclick="ul()" class="bg-primary text-light m-2">
-        <input type="button" value="Számozott Lista" onclick="ol()" class="bg-info text-light m-2">
-        <input type="button" value="Választó Lista" onclick="sel()" class="bg-success text-light m-2">
+        <input type="button" value="Számozatlan Lista" onclick="lista(this)" class="bg-primary text-light m-2" id="ul">
+        <input type="button" value="Számozott Lista" onclick="lista(this)" class="bg-info text-light m-2" id="ol">
+        <input type="button" value="Választó Lista" onclick="lista(this)" class="bg-success text-light m-2" id="sel">
     </div>
     </div>
     <div class="justify-content-center tartalom"></div>
     <h1>Best frameworks 2022</h1>
     <script>
         const frameworks=['NodeJS','ReactJS','jQuery','Express','Angular','VueJS','Django','Laravel']
-        function ul(){
+        function lista(){
             console.log('ul fg.-ben')
             let ulstr="<ul>"
                 for(let item of frameworks){
@@ -30,7 +30,7 @@
             console.log(ulstr)
             document.querySelector('.tartalom').innerHTML=ulstr
         }
-        function ol(){
+        function lista(){
             console.log('ol fg.-ben')
             let olstr="<ol>"
                 for(let item of frameworks){
@@ -41,7 +41,7 @@
             console.log(olstr)
             document.querySelector('.tartalom').innerHTML=olstr
         }
-        function sel(){
+        function lista(){
             
             console.log('sel fg.-ben')
             let selstr="<select>"

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        display:inline-block;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row bg-light p-2">
+            <div class="col-md-6 col-6 border display:inline-block;">
+        <p>Üzenet</p>
+        <textarea id="textarea" cols="30" rows="10"></textarea>
+            </div>
+            <div class="col-md-6 col-6 border">
+                <p>Név</p>
+                <input id="nev" type="text" placeholder="név">
+                <p>Email</p>
+                <input id="email" type="text" placeholder="név">
+                <input type="button" onclick="kuldes()" value="Küldés">
+            </div>
+        </div>
+        <div class="uzi"></div>
+    </div>
+
+    <script>
+function kuldes(){
+
+    let hibak=[]
+    document.querySelector('.uzi').innerHTML=""
+
+    let nev=document.getElementById('nev').value
+    console.log(nev)
+    if(nev.length>3){
+        nev=nev
+    }
+else{
+hibak.push("Nincs kitöltve a neve.")    
+}
+    let textarea=document.getElementById('textarea').value
+    console.log(textarea)
+    if(textarea.length!=0){
+    textarea=textarea
+    }
+    else{
+        hibak.push("Nincs üzenet beírva")
+    }
+    let email=document.getElementById('email').value
+    console.log(email)
+    if(email.length>3){
+        email=email
+    }
+    else{
+        hibak.push("Nincs kitöltve az E-mail")
+    }
+
+    
+    if(hibak.length==0){
+    document.querySelector('.uzi').innerHTML="Köszönjük a visszajelzést"
+    }
+    else
+      errors(hibak)
+
+}
+
+
+    function errors(arr){
+    let strUL="<ul>"
+    for(let txt of arr){
+        strUL+=`<li>${txt}</li>`
+    }
+    strUL += "</ul>"
+    document.querySelector('.uzi').innerHTML=strUL
+}
+
+
+    </script>
+</body>
+</html>
