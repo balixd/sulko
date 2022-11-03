@@ -1,12 +1,57 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Másol</title>
+    <style>
+        body{
+            width: calc(100%-16px);
+        }
+        .keret{
+            display: flex;
+            justify-content: space-around;
+        }
+        .oszlop{
+            width: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        p{
+            width: 100%;
+        }
+        textarea{
+            width: 300px;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="keret">
+    <div class="oszlop">
+ 
+        <textarea id="egy" cols="30" rows="10">sanko emos</textarea>
+        <input type="button" value="masol" onclick="masol()">
+</div>
+        <div class="oszlop">
+        <textarea id="ketto" cols="30" rows="10">xddddddd igen</textarea>
+        <input type="button" value="torol" onclick="torol()">
+    </div></div>
+    <script>
+        function masol(){
+            console.log("masolas kovetkezik")
+//kiolvasas
+        let szoveg=document.getElementById("egy").value
+        console.log(szoveg)
+//feluliras
+        document.getElementById("ketto").value=szoveg
+        }
+
+        function torol(){
+document.querySelector("#ketto").value="";
+        }
+    </script>
 </body>
 </html>

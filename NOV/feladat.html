@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Kód</th>
+                    <th>Név</th>
+                    <th>Székhely</th>
+                </tr>
+            </thead>
+            <tbody id="kiado"></tbody>
+        </table>
+
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>id</th>
+                    <th>Szerző</th>
+                    <th>Cím</th>
+                    <th>Év</th>
+                    <th>Kiadókód</th>
+                    <th>Oldal</th>
+                    <th>Téma</th>
+                </tr>
+            </thead>
+            <tbody id="konyvek"></tbody>
+        </table>
+
+
+
+    </div>
+    <script src="konyv.js"></script>
+    <script>
+         let str0=""
+        for(let obj of konyv){
+            str0+=`
+            
+            <tr>
+                <td>${obj.id}</td>
+                <td>${obj.szerzo}</td>
+                <td>${obj.cim}</td>
+                <td>${obj.ev}</td>
+                <td>${obj.kiadkokod}</td>
+                <td>${obj.oldal}</td>
+                <td>${obj.tema}</td>
+            </tr>
+            `
+        }
+
+        console.log(str0)
+        document.querySelector('#konyvek').innerHTML=str0
+    </script>
+
+    <script src="kiado.js"></script>
+    <script>
+  let str1=""
+  let str2=""
+        for(let obj of kiado){
+            str1+=`
+            
+            <tr>
+                <td>${obj.kod}</td>
+                <td>${obj.nev}</td>
+                <td>${obj.szekhely}</td>
+            </tr>
+            `
+        
+  str2+=`
+   <option value="${obj.kod}">${obj.nev}</option> 
+
+`
+        }
+        console.log(str1)
+        document.querySelector('#kiado').innerHTML=str1
+
+        document.querySelector("select").innerHTML=stt2
+
+    </script>
+</body>
+</html>
